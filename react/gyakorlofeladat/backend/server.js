@@ -14,3 +14,7 @@ const db = mysql.createConnection({
     password: "",
     database: kozutak,
 });
+
+app.get("/", (req,rest) => {
+    rest.send("Fut a backend!");
+});
