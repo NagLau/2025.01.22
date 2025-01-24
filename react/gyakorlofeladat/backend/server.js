@@ -18,3 +18,16 @@ const db = mysql.createConnection({
 app.get("/", (req,rest) => {
     rest.send("Fut a backend!");
 });
+
+app.get("/regiok", (req, res) => {
+    const sql = "SELECT * FROM 'regiok'";
+    db.query(sql, (err, result) => {
+        if (err) return req.json(err);
+        return res.json(result)
+    })
+})
+
+app.listen(3001, () => {
+    console.log("Server is running on port 3001");
+});
+
