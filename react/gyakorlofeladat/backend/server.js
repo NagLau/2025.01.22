@@ -10,7 +10,7 @@ app.use(cors());
 const db = mysql.createConnection({
     user: "root",
     host:"127.0.0.1",
-    port:3307,
+    //port:3307,csak akkor ha 3306tol eltero
     password:"",
     database: "kozutak",
 });
@@ -19,7 +19,7 @@ app.get("/", (req,rest) => {
     rest.send("Fut a backend!");
 })
  
-app.get ("/regiok",( req, res) => {
+app.get ("/regiok",(req,res) => {
     const sql ="SELECT * FROM `regiok`";
     db.query(sql, (err,result) => {
         if (err) return res.json(err);
@@ -30,3 +30,5 @@ app.get ("/regiok",( req, res) => {
 app.listen(3001, () => {
     console.log("Server is running on port 3001");
 })
+
+  
