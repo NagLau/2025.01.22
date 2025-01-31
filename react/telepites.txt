@@ -1,0 +1,5 @@
+npm init -y
+npm create vite@latest
+(opcionalis de most) REACT, JS
+cd cliens
+npm install
